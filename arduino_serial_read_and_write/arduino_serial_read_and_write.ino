@@ -1,5 +1,6 @@
 
 String readString;
+String ard_sends;
 char c;
 
 void setup()
@@ -32,7 +33,16 @@ void loop()
   delay(500);
  
   // serial write section
-  char ard_sends = 'A';
+  
+  if (readString == "FEI")
+  {
+    ard_sends = "Robotics and Artificial Intelligence Lab";
+  }
+  else
+  {
+    ard_sends = "Testing serial communication";
+  }
+  
   Serial.print("Arduino sends: ");
   Serial.println(ard_sends);
   Serial.print("\n");
